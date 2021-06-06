@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account on Facebook.</title>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #top_box {
+            /* border: 1px solid red; */
+            display: flex;
+            /* justify-content: space-around; */
+            background-color: #3b5998;
+            align-items: center;
+            height: 85px;
+        }
+
+        #brand_logo {
+            /* border: 1px solid white; */
+            position: absolute;
+            left: 8vw;
+        }
+
+        #brand_logo p {
+            font-size: 50px;
+            color: white;
+            padding-top: 8px;
+        }
+
+        #form_box {
+            /* border: 1px solid black; */
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            left: 55vw;
+        }
+
+        form {
+            /* border: 1px solid greenyellow; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 25px;
+            margin-top: 5px;
+        }
+
+        .input {
+            /* border:1px solid red; */
+            margin: 0 10px;
+        }
+
+        .input div {
+            color: white;
+            font-size: 14px;
+        }
+
+        .input_box {
+            /* border: 1px solid black; */
+            padding: 3px;
+        }
+
+
+        .log_in {
+            /* border:1px solid red; */
+            margin-top: 25px;
+        }
+
+        .log_in_btn {
+            padding: 3px 5px;
+            background-color: hsl(221, 45%, 47%);
+            color: white;
+            border: 1px solid grey;
+            /* border: none; */
+        }
+
+        .log_in_btn:hover {
+            background-color: #3b5998;
+            cursor: pointer;
+        }
+
+        .account {
+            /* border:1px solid hotpink; */
+            color: white;
+            margin-left: 75px;
+            margin-top: 5px;
+        }
+
+        .account a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .account a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            /* border: 1px solid blue; */
+            display: flex;
+            justify-content: center;
+            background-color: #ebedf0;
+        }
+
+        .main_box {
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        .para1 {
+            /* border: 1px solid black; */
+            font-size: 50px;
+            /* padding:15px; */
+        }
+
+        .para2 {
+            /* border: 1px solid black; */
+            font-size: 25px;
+            color: gray;
+            margin-top: 10px;
+        }
+
+        .form_box2 {
+            /* border: 1px solid red; */
+            margin-top: 20px;
+        }
+
+        .input_box .input1 {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+            /* margin-left:1%; */
+            font-size: 20px;
+            /* font-weight: bolder; */
+            border-radius: 4px;
+        }
+
+        .input_box .input2 {
+            width: 100%;
+            border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+
+        .info {
+            font-size: 20px;
+            color: gray;
+            line-height: 50px;
+        }
+
+        select {
+            padding: 5px;
+
+        }
+
+        .fa-question-circle {
+            color: #575555;
+        }
+
+        .my_gender {
+            /* border: 1px solid hotpink; */
+            display: flex;
+            flex-direction: row;
+            line-height: 30px;
+        }
+
+        .my_gen {
+            /* border: 1px solid blue; */
+            font-size: 20px;
+            padding-right: 20px;
+
+        }
+
+        .bottom_box {
+            /* border: 1px solid blue; */
+            color: gray;
+            font-size: 14px;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+
+        .bottom_box p a {
+            text-decoration: none;
+            color: #3b5998;
+        }
+
+        .bottom_box p a:hover {
+            text-decoration: underline;
+        }
+
+        #sign_up_btn {
+            width: 220px;
+            border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+            padding: 10px;
+            color: white;
+            border-radius: 4px;
+            border: none;
+            font-size: 20px;
+            font-weight: bolder;
+            background: linear-gradient(#67ae55, #578843);
+            background-color: #69a74e;
+            box-shadow: inset 0 1px 1px #a4e388;
+            border-color: #3b6e22 #3b6e22 #2c5115;
+        }
+
+        .foot {
+            display: flex;
+            flex-direction: column;
+            /* margin:40px auto 20px auto; */
+            font-size: 14px;
+        }
+
+        .foot1 {
+            /* border: 1px solid blue; */
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .foot1 div {
+            /* border: 1px solid red; */
+            padding: 0 10px 0 0;
+        }
+
+        .foot1 div a,
+        .foot2 div a {
+            text-decoration: none;
+            color: #3b5998;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .foot2_first div,
+        .foot2_second div,
+        .foot2_third div {
+            /* border: 1px solid blue; */
+            margin: 0 15px 0 0;
+        }
+
+        .foot2 {
+            /* border:1px solid red; */
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .foot2_first {
+            /* border:1px solid purple; */
+            display: flex;
+        }
+
+        .foot2_second {
+            /* border:1px solid purple; */
+            display: flex;
+        }
+
+        .foot2_third {
+            /* border:1px solid purple; */
+            display: flex;
+        }
+
+        .foot3 {
+            /* border:1px solid hotpink; */
+            display: flex;
+        }
+
+        .foot1 a:hover {
+            text-decoration: underline;
+        }
+
+        .foot2_first a:hover {
+            text-decoration: underline;
+        }
+
+        .foot2_second a:hover {
+            text-decoration: underline;
+        }
+
+        .foot2_third a:hover {
+            text-decoration: underline;
+        }
+
+        .foot3 {
+            /* border: 1px solid red; */
+            padding: 5px 0;
+            margin: 10px 0;
+            color: gray;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width:1010px) {
+            .foot {
+                /* background-color: hotpink;
+                border:1px solid black; */
+                padding-top: 70px;
+
+            }
+
+            footer {}
+
+            .foot2 {
+                /* border:1px solid black; */
+                width: 1000px;
+            }
+        }
+
+        @media screen and (min-width:1015px) {
+            footer {
+                /* background-color: yellow;
+                border:1px solid black; */
+                padding-top: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="top_box">
+                <div id="brand_logo">
+                    <p>Facebook</p>
+                </div>
+                <div id="form_box">
+                    <form>
+                        <div class="input">
+                            <div>Email or phone</div>
+                            <input type="text" class="input_box">
+                        </div>
+                        <div class="input">
+                            <div>Password</div>
+                            <input type="password" class="input_box">
+
+                        </div>
+                        <div class="log_in">
+                            <input type="submit" class="log_in_btn" value="log in">
+                        </div>
+
+                    </form>
+                    <div class="account">
+                        <a href="#">Account Forgot?</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="main_box">
+            <div class="para1">
+                <p>Create new account</p>
+            </div>
+            <div class="para2">
+                <p>Instantly and easily.</p>
+            </div>
+            <div class="form_box2">
+                <div class="input_box">
+                    <input type="text" class="input1" placeholder="Name">
+                    &nbsp;&nbsp; <input type="text" class="input1" placeholder="surname">
+                </div>
+                <div class="input_box">
+                    <input type="text" class="input2" placeholder="Mobile number or email">
+                </div>
+                <div class="input_box">
+                    <input type="password" class="input2" placeholder="New Password">
+                </div>
+                <div class="input_box">
+                    <div class="info">Birthday</div>
+                    <div class="date">
+                        <select title="Day">
+                            <option>Day</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option selected>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                        </select>
+                        <select title="Month">
+                            <option>Month</option>
+                            <option>January</option>
+                            <option>Feburary</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option selected>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select title="The year">
+                            <option>Year</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option selected>2021</option>
+                        </select>
+                        <a href="#"><i class="fas fa-question-circle" title="Click for more information "></i></a>
+                    </div>
+                </div>
+
+
+                <div class="input_box">
+                    <div class="info">Gender</div>
+                    <div class="my_gender">
+                        <div class="my_gen"> <input type="radio" name="my_gender" class="gender">&nbsp;Woman</div>
+                        <div class="my_gen"> <input type="radio" name="my-gender" class="gender">&nbsp;Male</div>
+                        <div class="my_gen"><input type="radio" name="my_gender" class="gender">&nbsp;Custom</div>
+                        <div class="my_gender"><a href="#"><i class="fas fa-question-circle"
+                                    title="Click for more information"></i></a></div>
+
+                    </div>
+                </div>
+
+                <div class="bottom_box">
+                    <p>Clicking Sign Up means that you agree to our <a href="#"> terms,</a><a href="#"> data policy</a>
+                        <br>and <a href="#">cookie policy .</a> We can
+                        send you SMS notifications. <br>Whenever you want, you can opt out to stop getting them.
+                    </p>
+                </div>
+
+
+                <div class="sign_up">
+                    <input type="submit" id="sign_up_btn" value="Sign up">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot">
+            <div class="foot1">
+                <div style="color:gray;font-size: 14px; margin-top: 2px;">Hindi</div>
+                <div><a href="#">flag</a></div>
+                <div><a href="#" title="Urdu">اُردُو</a></div>
+                <div><a href="#" title="kannada">4</a></div>
+                <div><a href="#" title="Malayalam">മലയാളം</a></div>
+                <div><a href="#" title="Telgu">4</a></div>
+                <div><a href="#" title="Tamil">4</a></div>
+                <div><a href="#" title="Gujrati">ગુજરાતી</a></div>
+                <div><a href="#" title="Bengali">বাংলা</a></div>
+                <div><a href="#" title="Punjabi">ਪੰਜਾਬੀ</a></div>
+                <div><a href="#" title="English(UK)">English (UK)</a></div>
+                <div><a href="#" title="Show more languages"><i class="far fa-plus-square"></i></a></div>
+            </div>
+            <hr>
+            <div class="foot2">
+                <div class="foot2_first">
+                    <div><a href="#" title="Sign up for facebook">Sign up</a></div>
+                    <div><a href="#" title="Log into facebook">log in</a></div>
+                    <div><a href="#" title="See messanger">Messanger</a></div>
+                    <div><a href="#" title="Facebook Lite for Android">Facebook lite</a></div>
+                    <div><a href="#" title="Browse Our Watch Videos">Watch</a></div>
+                    <div><a href="#" title="Browse our directory of people">The people</a></div>
+                    <div><a href="#" title="Browse our page directory">The page</a></div>
+                    <div><a href="#" title="">Page categories</a></div>
+                    <div><a href="#" title="See our popular locations on Facebook">place</a></div>
+                    <div><a href="#" title="Checkout the Facebook game">sport</a></div>
+                    <div><a href="#" title="Browse our directory of locations">place</a></div>
+                    <div><a href="#" title="Buy and sell on facebook marketplace">Marketplace</a></div>
+                    <div><a href="#" title="Learn more about facebook pay">Facebook Pay</a></div>
+                    <div><a href="#" title="Browse our group directory">group</a></div>
+                </div>
+                <div class="foot2_second">
+                    <div><a href="#" title="">Jobs</a></div>
+                    <div><a href="#" title="">Oculus</a></div>
+                    <div><a href="#" title="">Portal</a></div>
+                    <div><a href="#" title="">Instagram</a></div>
+                    <div><a href="#" title="">Local</a></div>
+                    <div><a href="#" title="">Fundraiser</a></div>
+                    <div><a href="#" title="">Services</a></div>
+                    <div><a href="#" title="">Voting Information Center</a></div>
+                    <div><a href="#" title="">introduction</a></div>
+                    <div><a href="#" title="">Create advertisement</a></div>
+                    <div><a href="#" title="">Create page</a></div>
+                    <div><a href="#" title="">The developer</a></div>
+                </div>
+                <div class="foot2_third">
+                    <div><a href="#" title="">Career</a></div>
+                    <div><a href="#" title="">Privacy</a></div>
+                    <div><a href="#" title="">Cokkie</a></div>
+                    <div><a href="#" title="">Advertising option</a></div>
+                    <div><a href="#" title="">The conditions</a></div>
+                    <div><a href="#" title="">Help center</a></div>
+                </div>
+            </div>
+            <div class="foot3">
+                <div>Facebook &copy; 2021</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
